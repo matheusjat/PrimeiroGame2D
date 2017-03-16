@@ -1,12 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
+    public int speed = 1;
+    private int count;
+    public Text score;
+    public Text winMessage;
 
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        count = 0;
+
+        winMessage.text = "";
     }
 
     void Update()
@@ -30,7 +39,7 @@ public class PlayerController : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb2d.AddForce(movement);
+        rb2d.AddForce(movement*speed);
     }
 
     void OnTriggerEnter2D(Collider2D colisor)
@@ -38,7 +47,19 @@ public class PlayerController : MonoBehaviour {
         if (colisor.gameObject.CompareTag("Ouro"))
         {
             colisor.gameObject.SetActive(false);
+            count++;
+            SetScoreText();
+            
         }
+    }
+
+    void SetScoreText()
+    {
+        score.text = "Score: " + count;
+        if (count >= 6)
+        {
+            winMessage.text = "You Win!";
+        }        
     }
 	
 }
