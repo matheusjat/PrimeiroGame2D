@@ -684,6 +684,7 @@ GameObject:
   - 50: {fileID: 1760786191}
   - 58: {fileID: 1760786194}
   - 114: {fileID: 1760786195}
+  - 95: {fileID: 1760786196}
   m_Layer: 8
   m_Name: Nave
   m_TagString: Untagged
@@ -781,7 +782,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   score: {fileID: 650865387}
-  win: {fileID: 642827750}
+  winMessage: {fileID: 642827750}
+--- !u!95 &1760786196
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760786190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d06a728da37bae47bec6e9e93771832, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1851534716
 Prefab:
   m_ObjectHideFlags: 0
@@ -981,7 +999,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1715621475
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &2065285076

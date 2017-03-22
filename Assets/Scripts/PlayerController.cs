@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
-    public int speed = 1;
     private int count;
+
+    public int speed = 1;
     public Text score;
     public Text winMessage;
 
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     {
         rb2d = GetComponent<Rigidbody2D>();
         count = 0;
+        Vector2 movement = new Vector2(0,0);
 
         winMessage.text = "";
     }
@@ -32,6 +34,9 @@ public class PlayerController : MonoBehaviour {
                 Application.Quit();
             }
         }
+
+        
+
     }
 
 	void FixedUpdate () {
@@ -40,6 +45,7 @@ public class PlayerController : MonoBehaviour {
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2d.AddForce(movement*speed);
+        
     }
 
     void OnTriggerEnter2D(Collider2D colisor)
