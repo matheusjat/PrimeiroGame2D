@@ -6,19 +6,24 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
     private int count;
+    private int totalOuros;
 
     public int speed = 1;
     public Text score;
     public Text winMessage;
 
-    void Awake()
+    void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         count = 0;
         Vector2 movement = new Vector2(0,0);
 
         winMessage.text = "";
+
+        totalOuros = GameObject.FindGameObjectsWithTag("Ouro").Length;
     }
+
+    
 
     void Update()
     {
@@ -62,7 +67,7 @@ public class PlayerController : MonoBehaviour {
     void SetScoreText()
     {
         score.text = "Score: " + count;
-        if (count >= 6)
+        if (count >= totalOuros)
         {
             winMessage.text = "You Win!";
         }        
