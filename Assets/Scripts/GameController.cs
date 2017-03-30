@@ -6,8 +6,8 @@ using System.Collections.Generic;
 public class GameController : MonoBehaviour {
 
     private List<Vector3> gameMatrix;
-
-    public GameObject ouros; 
+    public GameObject ouros;
+     
 
     // Use this for initialization
     void Awake() {
